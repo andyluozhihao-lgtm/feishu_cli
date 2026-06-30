@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.zhuanspirit.weekly-task-notifier</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/node</string>
+    <string>/Users/Admin/Desktop/feishu_cli/scripts/weekly-task-notifier.mjs</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/Admin/Desktop/feishu_cli</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>LARK_WEBHOOK_URL</key>
+    <string>https://open.feishu.cn/open-apis/bot/v2/hook/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx</string>
+    <key>LARK_WEBHOOK_SECRET</key>
+    <string></string>
+    <key>LARK_CLI</key>
+    <string>/Users/Admin/.npm-global/bin/lark-cli</string>
+    <key>PATH</key>
+    <string>/usr/local/bin:/Users/Admin/.npm-global/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/Admin</string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>10</integer>
+    <key>Minute</key>
+    <integer>13</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/tmp/weekly-task-notifier.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/tmp/weekly-task-notifier.err.log</string>
+</dict>
+</plist>

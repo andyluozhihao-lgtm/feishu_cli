@@ -1,0 +1,13 @@
+{
+  "name": "feishu-weekly-task-notifier",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "notify": "node scripts/weekly-task-notifier.mjs",
+    "notify:dry-run": "DRY_RUN=1 node scripts/weekly-task-notifier.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
