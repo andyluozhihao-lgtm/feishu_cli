@@ -36,6 +36,12 @@ main().catch((error) => {
 async function main() {
   const records = await loadRecords();
   const activeRecords = records.filter(isActiveRecord);
+
+  if (activeRecords.length === 0) {
+    console.log("No active tasks to remind; skipped sending a Feishu group message.");
+    return;
+  }
+
   const text = buildMessage(activeRecords);
 
   if (config.dryRun) {
@@ -198,7 +204,10 @@ function renderMention(owner) {
 }
 
 function formatDateForMessage(value) {
-  return String(value).replace(/\s+00:00:00$/, "");
+  return String(value).replace(
+    /(?:T|\s+)00:00:00(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})?$/,
+    ""
+  );
 }
 
 async function sendWebhook(text) {
